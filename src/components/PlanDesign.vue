@@ -32,33 +32,33 @@
         border
         style="width: 100%">
       <el-table-column
-          prop="plan_bill_no"
+          prop="planBillNo"
           label="规划工单号"
           width="220">
       </el-table-column>
       <el-table-column
-          prop="plan_design_name"
+          prop="planDesignName"
           label="规划设计名称"
           width="220">
       </el-table-column>
       <el-table-column
-          prop="design_company"
+          prop="designCompany"
           label="设计单位"
           width="230">
       </el-table-column>
       <el-table-column
-          prop="spec_id"
+          prop="specId"
           label="业务类型"
           :formatter="formatterDesignType"
           width="120">
       </el-table-column>
       <el-table-column
-          prop="project_director"
+          prop="projectDirector"
           label="项目总负责人"
           width="120">
       </el-table-column>
       <el-table-column
-          prop="spec_leader"
+          prop="specLeader"
           label="专业负责人"
           width="120">
       </el-table-column>
@@ -73,7 +73,7 @@
           width="120">
       </el-table-column>
       <el-table-column
-          prop="create_time"
+          prop="createTime"
           label="设计新建时间"
           width="170">
       </el-table-column>
@@ -316,24 +316,24 @@ export default {
       const cad_coord_right = str2.substring(1, index1);
       const cad_coord_bottom = str2.substring(index1 + 1, index3)
       axios.post('http://localhost:8080/createBill.do', {
-        "plan_bill_no": this.form.planBillNo,
-        "plan_design_name": this.form.planDesignName,
-        "design_company": this.form.designCompany,
-        "spec_id": this.form.specId,
-        "project_director": this.form.projectDirector,
-        "spec_leader": this.form.specLeader,
+        "planBillNo": this.form.planBillNo,
+        "planDesignName": this.form.planDesignName,
+        "designCompany": this.form.designCompany,
+        "specId": this.form.specId,
+        "projectDirector": this.form.projectDirector,
+        "specLeader": this.form.specLeader,
         "designer": this.form.designer,
         "reviewer": this.form.reviewer,
-        "system_cad_file_name": this.dwgFileName,
-        "system_cad_file_url": this.dwgFileUrl,
-        "system_excel_file_name": this.xls1FileName,
-        "system_excel_file_url": this.xls2FileName,
-        "channel_excel_file_name": this.xls2FileName,
-        "channel_excel_file_url": this.xls2FileUrl,
-        "cad_coord_left": cad_coord_left,
-        "cad_coord_top": cad_coord_top,
-        "cad_coord_right": cad_coord_right,
-        "cad_coord_bottom": cad_coord_bottom
+        "systemCadFileName": this.dwgFileName,
+        "systemCadFileUrl": this.dwgFileUrl,
+        "systemExcelFileName": this.xls1FileName,
+        "systemExcelFileUrl": this.xls2FileName,
+        "channelExcelFileName": this.xls2FileName,
+        "channelExcelFileUrl": this.xls2FileUrl,
+        "cadCoordLeft": cad_coord_left,
+        "cadCoordTop": cad_coord_top,
+        "cadCoordRight": cad_coord_right,
+        "cadCoordBottom": cad_coord_bottom
       })
           .then(function (response) {
             console.log(response);
@@ -372,24 +372,24 @@ export default {
       const cad_coord_right = str2.substring(1, index1);
       const cad_coord_bottom = str2.substring(index1 + 1, index3)
       axios.post('http://localhost:8080/createBillAndAnalyse.do', {
-        "plan_bill_no": this.form.planBillNo,
-        "plan_design_name": this.form.planDesignName,
-        "design_company": this.form.designCompany,
-        "spec_id": this.form.specId,
-        "project_director": this.form.projectDirector,
-        "spec_leader": this.form.specLeader,
+        "planBillNo": this.form.planBillNo,
+        "planDesignName": this.form.planDesignName,
+        "designCompany": this.form.designCompany,
+        "specId": this.form.specId,
+        "projectDirector": this.form.projectDirector,
+        "specLeader": this.form.specLeader,
         "designer": this.form.designer,
         "reviewer": this.form.reviewer,
-        "system_cad_file_name": this.dwgFileName,
-        "system_cad_file_url": this.dwgFileUrl,
-        "system_excel_file_name": this.xls1FileName,
-        "system_excel_file_url": this.xls2FileName,
-        "channel_excel_file_name": this.xls2FileName,
-        "channel_excel_file_url": this.xls2FileUrl,
-        "cad_coord_left": cad_coord_left,
-        "cad_coord_top": cad_coord_top,
-        "cad_coord_right": cad_coord_right,
-        "cad_coord_bottom": cad_coord_bottom
+        "systemCadFileName": this.dwgFileName,
+        "systemCadFileUrl": this.dwgFileUrl,
+        "systemExcelFileName": this.xls1FileName,
+        "systemExcelFileUrl": this.xls2FileName,
+        "channelExcelFileName": this.xls2FileName,
+        "channelExcelFileUrl": this.xls2FileUrl,
+        "cadCoordLeft": cad_coord_left,
+        "cadCoordTop": cad_coord_top,
+        "cadCoordRight": cad_coord_right,
+        "cadCoordBottom": cad_coord_bottom
       })
           .then(function (response) {
             console.log(response);
