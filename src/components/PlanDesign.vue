@@ -111,7 +111,10 @@
           <el-input v-model="form.designCompany" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item label="规划类型" :label-width="formLabelWidth">
-          <el-input v-model="form.specId" autocomplete="off"></el-input>
+          <el-select v-model="form.specId" placeholder="规划类型">
+            <el-option v-once v-for="(item,index) in this.planDesignType.entries" :key="item.key" :value="item.value"
+                       :label="item.text"></el-option>
+          </el-select>
         </el-form-item>
         <el-form-item label="项目总负责人" :label-width="formLabelWidth">
           <el-input v-model="form.projectDirector" autocomplete="off"></el-input>
@@ -457,4 +460,14 @@ export default {
 .el-input {
   width: 450px;
 }
+
+.form-item-flex {
+  display: flex;
+  align-items: center;
+}
+
+.label {
+  margin-right: 10px;
+}
+
 </style>
